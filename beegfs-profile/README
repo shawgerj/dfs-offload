@@ -1,0 +1,7 @@
+Do 100 writes to a file, each followed by fsync.
+- 4KB
+- 1MB
+
+We do this to figure out worker thread execution time per request.
+
+BeeGFS has been modified to print worker thread timings to a file
