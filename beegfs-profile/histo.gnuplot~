@@ -1,0 +1,42 @@
+#
+# Stacked histograms
+#
+set terminal pdf enhanced
+set output 'write-ops.pdf'
+set title "BeeGFS Worker Thread (avg. 100 ops)"
+
+# Where to put the legend
+# and what it should contain
+set key invert reverse Left outside
+set key autotitle columnheader
+
+set yrange [0:*]
+set ylabel "Time (usec)"
+
+# Define plot style 'stacked histogram'
+# with additional settings
+set style data histogram
+set style histogram rowstacked
+set style fill solid border -1
+set boxwidth 0.75
+
+# We are plotting columns 2, 3 and 4 as y-values,
+# the x-ticks are coming from column 1
+plot 'write-iops.data' using 2:xtic(1) \
+    ,'' using 5 \
+    ,'' using 6
+
+
+# New graph
+# We keep the settings from above except:
+set output 'stackedhisto1.png'
+set title "Stacked histogram\n% totals"
+set ylabel "% of total"
+
+# We are plotting columns 2, 3 and 4 as y-values,
+# the x-ticks are coming from column 1
+# Additionally to the graph above we need to specify
+# the titles via 't 2' aso.
+plot 'stackedhisto.dat' using (100*$2/($2+$3+$4)):xtic(1) t 2\
+    ,'' using (100*$3/($2+$3+$4)) t 3\
+    ,'' using (100*$4/($2+$3+$4)) t 4
