@@ -1,0 +1,810 @@
+Detail:	receive	15	create	3	process	5	cleanup	21
+WorkTotal	107
+Detail:	receive	2	create	22	process	19957	cleanup	11
+WorkTotal	19999
+Detail:	receive	11	create	3	process	2	cleanup	11
+WorkTotal	70
+Detail:	receive	2	create	2	process	0	cleanup	11
+WorkTotal	31
+WriteLocalFile
+RecvWrite	17
+Detail:	receive	2	create	4	process	244	cleanup	12
+WorkTotal	268
+FSyncLocalFile
+FsyncLocal	515
+Detail:	receive	2	create	18	process	555	cleanup	18
+WorkTotal	600
+WriteLocalFile
+RecvWrite	29
+Detail:	receive	4	create	3	process	61	cleanup	17
+WorkTotal	92
+FSyncLocalFile
+FsyncLocal	360
+Detail:	receive	0	create	0	process	369	cleanup	7
+WorkTotal	382
+WriteLocalFile
+RecvWrite	12
+Detail:	receive	0	create	1	process	21	cleanup	6
+WorkTotal	33
+FSyncLocalFile
+FsyncLocal	407
+Detail:	receive	2	create	2	process	445	cleanup	13
+WorkTotal	467
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	40	cleanup	10
+WorkTotal	58
+FSyncLocalFile
+FsyncLocal	358
+Detail:	receive	2	create	1	process	389	cleanup	12
+WorkTotal	409
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	39	cleanup	10
+WorkTotal	57
+FSyncLocalFile
+FsyncLocal	312
+Detail:	receive	0	create	0	process	317	cleanup	3
+WorkTotal	324
+WriteLocalFile
+RecvWrite	8
+Detail:	receive	0	create	0	process	12	cleanup	4
+WorkTotal	20
+FSyncLocalFile
+FsyncLocal	175
+Detail:	receive	0	create	0	process	179	cleanup	2
+WorkTotal	184
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	178
+Detail:	receive	0	create	0	process	182	cleanup	2
+WorkTotal	187
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	292
+Detail:	receive	2	create	1	process	313	cleanup	9
+WorkTotal	329
+WriteLocalFile
+RecvWrite	13
+Detail:	receive	0	create	1	process	21	cleanup	4
+WorkTotal	29
+FSyncLocalFile
+FsyncLocal	271
+Detail:	receive	0	create	0	process	275	cleanup	2
+WorkTotal	280
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	271
+Detail:	receive	0	create	0	process	274	cleanup	2
+WorkTotal	279
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	171
+Detail:	receive	0	create	0	process	174	cleanup	2
+WorkTotal	179
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	169
+Detail:	receive	0	create	0	process	173	cleanup	2
+WorkTotal	178
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	167
+Detail:	receive	0	create	0	process	171	cleanup	2
+WorkTotal	176
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	83
+Detail:	receive	0	create	0	process	87	cleanup	2
+WorkTotal	92
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	11	cleanup	4
+WorkTotal	18
+FSyncLocalFile
+FsyncLocal	276
+Detail:	receive	0	create	0	process	280	cleanup	2
+WorkTotal	285
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	8	cleanup	4
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	302
+Detail:	receive	0	create	0	process	306	cleanup	2
+WorkTotal	311
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	291
+Detail:	receive	0	create	0	process	294	cleanup	2
+WorkTotal	299
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	174
+Detail:	receive	0	create	0	process	178	cleanup	2
+WorkTotal	183
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	168
+Detail:	receive	0	create	0	process	171	cleanup	2
+WorkTotal	176
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	171
+Detail:	receive	0	create	0	process	175	cleanup	2
+WorkTotal	180
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	82
+Detail:	receive	0	create	0	process	86	cleanup	2
+WorkTotal	91
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	27
+FSyncLocalFile
+FsyncLocal	279
+Detail:	receive	0	create	0	process	282	cleanup	2
+WorkTotal	288
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	306
+Detail:	receive	0	create	0	process	310	cleanup	2
+WorkTotal	315
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	274
+Detail:	receive	0	create	0	process	278	cleanup	2
+WorkTotal	283
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	171
+Detail:	receive	0	create	0	process	175	cleanup	2
+WorkTotal	180
+WriteLocalFile
+RecvWrite	34
+Detail:	receive	0	create	0	process	38	cleanup	2
+WorkTotal	43
+FSyncLocalFile
+FsyncLocal	181
+Detail:	receive	0	create	0	process	184	cleanup	2
+WorkTotal	189
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	166
+Detail:	receive	0	create	0	process	170	cleanup	2
+WorkTotal	175
+WriteLocalFile
+RecvWrite	7
+Detail:	receive	0	create	0	process	11	cleanup	4
+WorkTotal	18
+FSyncLocalFile
+FsyncLocal	82
+Detail:	receive	0	create	0	process	86	cleanup	4
+WorkTotal	92
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	268
+Detail:	receive	0	create	0	process	273	cleanup	2
+WorkTotal	278
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	273
+Detail:	receive	0	create	0	process	277	cleanup	2
+WorkTotal	282
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	8	cleanup	4
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	276
+Detail:	receive	0	create	0	process	279	cleanup	2
+WorkTotal	284
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	170
+Detail:	receive	0	create	0	process	174	cleanup	3
+WorkTotal	179
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	174
+Detail:	receive	0	create	0	process	178	cleanup	2
+WorkTotal	183
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	165
+Detail:	receive	0	create	0	process	168	cleanup	2
+WorkTotal	174
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	165
+Detail:	receive	0	create	0	process	169	cleanup	4
+WorkTotal	175
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	13	cleanup	4
+WorkTotal	20
+FSyncLocalFile
+FsyncLocal	81
+Detail:	receive	0	create	0	process	85	cleanup	12
+WorkTotal	101
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	174
+Detail:	receive	0	create	0	process	178	cleanup	4
+WorkTotal	185
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	9	cleanup	3
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	189
+Detail:	receive	0	create	0	process	192	cleanup	2
+WorkTotal	197
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	8	cleanup	4
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	274
+Detail:	receive	0	create	0	process	278	cleanup	2
+WorkTotal	283
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	167
+Detail:	receive	0	create	0	process	171	cleanup	2
+WorkTotal	176
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	166
+Detail:	receive	0	create	0	process	169	cleanup	2
+WorkTotal	174
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	164
+Detail:	receive	0	create	0	process	168	cleanup	2
+WorkTotal	173
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	166
+Detail:	receive	0	create	0	process	170	cleanup	4
+WorkTotal	177
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	248
+Detail:	receive	0	create	0	process	252	cleanup	2
+WorkTotal	257
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	264
+Detail:	receive	0	create	0	process	268	cleanup	2
+WorkTotal	273
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	8	cleanup	4
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	270
+Detail:	receive	0	create	0	process	273	cleanup	2
+WorkTotal	279
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	172
+Detail:	receive	0	create	0	process	176	cleanup	2
+WorkTotal	181
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	166
+Detail:	receive	0	create	0	process	169	cleanup	2
+WorkTotal	174
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	167
+Detail:	receive	0	create	0	process	170	cleanup	2
+WorkTotal	175
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	165
+Detail:	receive	0	create	0	process	169	cleanup	2
+WorkTotal	174
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	83
+Detail:	receive	0	create	0	process	87	cleanup	4
+WorkTotal	94
+WriteLocalFile
+RecvWrite	7
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	186
+Detail:	receive	0	create	0	process	191	cleanup	2
+WorkTotal	196
+WriteLocalFile
+RecvWrite	7
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	214
+Detail:	receive	0	create	0	process	218	cleanup	2
+WorkTotal	223
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	189
+Detail:	receive	0	create	0	process	192	cleanup	2
+WorkTotal	197
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	168
+Detail:	receive	0	create	0	process	171	cleanup	2
+WorkTotal	176
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	164
+Detail:	receive	0	create	0	process	168	cleanup	2
+WorkTotal	173
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	165
+Detail:	receive	0	create	0	process	169	cleanup	2
+WorkTotal	174
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	166
+Detail:	receive	0	create	0	process	170	cleanup	4
+WorkTotal	176
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	82
+Detail:	receive	0	create	0	process	86	cleanup	4
+WorkTotal	93
+WriteLocalFile
+RecvWrite	12
+Detail:	receive	0	create	0	process	16	cleanup	4
+WorkTotal	23
+FSyncLocalFile
+FsyncLocal	391
+Detail:	receive	2	create	1	process	428	cleanup	18
+WorkTotal	456
+WriteLocalFile
+RecvWrite	26
+Detail:	receive	2	create	3	process	57	cleanup	15
+WorkTotal	85
+FSyncLocalFile
+FsyncLocal	329
+Detail:	receive	2	create	2	process	365	cleanup	12
+WorkTotal	387
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	40	cleanup	10
+WorkTotal	58
+FSyncLocalFile
+FsyncLocal	290
+Detail:	receive	2	create	1	process	321	cleanup	12
+WorkTotal	340
+WriteLocalFile
+RecvWrite	17
+Detail:	receive	2	create	2	process	38	cleanup	9
+WorkTotal	55
+FSyncLocalFile
+FsyncLocal	279
+Detail:	receive	2	create	1	process	309	cleanup	12
+WorkTotal	329
+WriteLocalFile
+RecvWrite	17
+Detail:	receive	2	create	2	process	38	cleanup	9
+WorkTotal	55
+FSyncLocalFile
+FsyncLocal	200
+Detail:	receive	2	create	1	process	220	cleanup	10
+WorkTotal	238
+WriteLocalFile
+RecvWrite	14
+Detail:	receive	0	create	1	process	23	cleanup	3
+WorkTotal	30
+FSyncLocalFile
+FsyncLocal	273
+Detail:	receive	0	create	0	process	277	cleanup	2
+WorkTotal	283
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	10	cleanup	4
+WorkTotal	17
+FSyncLocalFile
+FsyncLocal	262
+Detail:	receive	0	create	0	process	266	cleanup	2
+WorkTotal	271
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	8	cleanup	4
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	268
+Detail:	receive	0	create	0	process	279	cleanup	2
+WorkTotal	284
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	173
+Detail:	receive	0	create	0	process	177	cleanup	2
+WorkTotal	182
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	169
+Detail:	receive	0	create	0	process	173	cleanup	2
+WorkTotal	178
+WriteLocalFile
+RecvWrite	143
+Detail:	receive	0	create	0	process	147	cleanup	1
+WorkTotal	151
+FSyncLocalFile
+FsyncLocal	168
+Detail:	receive	0	create	0	process	172	cleanup	2
+WorkTotal	177
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	14	cleanup	4
+WorkTotal	20
+FSyncLocalFile
+FsyncLocal	107
+Detail:	receive	0	create	0	process	111	cleanup	2
+WorkTotal	117
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	3
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	288
+Detail:	receive	0	create	0	process	291	cleanup	2
+WorkTotal	296
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	3
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	291
+Detail:	receive	0	create	0	process	294	cleanup	2
+WorkTotal	300
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	3
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	268
+Detail:	receive	0	create	0	process	271	cleanup	2
+WorkTotal	276
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	3
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	179
+Detail:	receive	0	create	0	process	182	cleanup	4
+WorkTotal	189
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	309
+Detail:	receive	0	create	0	process	313	cleanup	2
+WorkTotal	318
+WriteLocalFile
+RecvWrite	6
+Detail:	receive	0	create	0	process	9	cleanup	3
+WorkTotal	16
+FSyncLocalFile
+FsyncLocal	310
+Detail:	receive	0	create	0	process	314	cleanup	2
+WorkTotal	319
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	8	cleanup	3
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	270
+Detail:	receive	0	create	0	process	274	cleanup	2
+WorkTotal	279
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	3
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	168
+Detail:	receive	0	create	0	process	172	cleanup	2
+WorkTotal	177
+WriteLocalFile
+RecvWrite	5
+Detail:	receive	0	create	0	process	9	cleanup	4
+WorkTotal	15
+FSyncLocalFile
+FsyncLocal	165
+Detail:	receive	0	create	0	process	169	cleanup	4
+WorkTotal	176
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	40	cleanup	10
+WorkTotal	57
+FSyncLocalFile
+FsyncLocal	380
+Detail:	receive	2	create	1	process	410	cleanup	11
+WorkTotal	429
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	39	cleanup	10
+WorkTotal	57
+FSyncLocalFile
+FsyncLocal	416
+Detail:	receive	2	create	1	process	453	cleanup	19
+WorkTotal	483
+WriteLocalFile
+RecvWrite	26
+Detail:	receive	2	create	3	process	58	cleanup	15
+WorkTotal	85
+FSyncLocalFile
+FsyncLocal	400
+Detail:	receive	2	create	2	process	437	cleanup	12
+WorkTotal	459
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	1	create	2	process	27	cleanup	4
+WorkTotal	37
+FSyncLocalFile
+FsyncLocal	363
+Detail:	receive	2	create	1	process	394	cleanup	12
+WorkTotal	413
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	39	cleanup	9
+WorkTotal	56
+FSyncLocalFile
+FsyncLocal	380
+Detail:	receive	2	create	1	process	410	cleanup	11
+WorkTotal	429
+WriteLocalFile
+RecvWrite	17
+Detail:	receive	2	create	2	process	38	cleanup	9
+WorkTotal	55
+FSyncLocalFile
+FsyncLocal	355
+Detail:	receive	2	create	1	process	386	cleanup	13
+WorkTotal	406
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	39	cleanup	11
+WorkTotal	57
+FSyncLocalFile
+FsyncLocal	194
+Detail:	receive	0	create	0	process	198	cleanup	4
+WorkTotal	206
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	40	cleanup	10
+WorkTotal	57
+FSyncLocalFile
+FsyncLocal	401
+Detail:	receive	2	create	2	process	437	cleanup	12
+WorkTotal	458
+WriteLocalFile
+RecvWrite	17
+Detail:	receive	2	create	2	process	39	cleanup	10
+WorkTotal	57
+FSyncLocalFile
+FsyncLocal	431
+Detail:	receive	2	create	1	process	462	cleanup	13
+WorkTotal	483
+WriteLocalFile
+RecvWrite	17
+Detail:	receive	2	create	2	process	46	cleanup	9
+WorkTotal	64
+FSyncLocalFile
+FsyncLocal	304
+Detail:	receive	2	create	1	process	323	cleanup	9
+WorkTotal	339
+WriteLocalFile
+RecvWrite	13
+Detail:	receive	0	create	1	process	20	cleanup	4
+WorkTotal	28
+FSyncLocalFile
+FsyncLocal	370
+Detail:	receive	2	create	1	process	408	cleanup	18
+WorkTotal	437
+WriteLocalFile
+RecvWrite	28
+Detail:	receive	2	create	3	process	60	cleanup	15
+WorkTotal	87
+FSyncLocalFile
+FsyncLocal	398
+Detail:	receive	2	create	2	process	434	cleanup	12
+WorkTotal	455
+WriteLocalFile
+RecvWrite	17
+Detail:	receive	2	create	2	process	39	cleanup	10
+WorkTotal	57
+FSyncLocalFile
+FsyncLocal	363
+Detail:	receive	2	create	1	process	394	cleanup	13
+WorkTotal	414
+WriteLocalFile
+RecvWrite	17
+Detail:	receive	1	create	1	process	25	cleanup	4
+WorkTotal	35
+FSyncLocalFile
+FsyncLocal	364
+Detail:	receive	0	create	0	process	385	cleanup	12
+WorkTotal	401
+WriteLocalFile
+RecvWrite	19
+Detail:	receive	2	create	2	process	40	cleanup	10
+WorkTotal	58
+FSyncLocalFile
+FsyncLocal	417
+Detail:	receive	2	create	1	process	448	cleanup	12
+WorkTotal	468
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	40	cleanup	10
+WorkTotal	58
+FSyncLocalFile
+FsyncLocal	418
+Detail:	receive	2	create	1	process	449	cleanup	13
+WorkTotal	470
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	40	cleanup	10
+WorkTotal	58
+FSyncLocalFile
+FsyncLocal	205
+Detail:	receive	2	create	1	process	225	cleanup	10
+WorkTotal	244
+WriteLocalFile
+RecvWrite	18
+Detail:	receive	2	create	2	process	41	cleanup	10
+WorkTotal	59
+FSyncLocalFile
+FsyncLocal	389
+Detail:	receive	2	create	1	process	427	cleanup	18
+WorkTotal	455
+WriteLocalFile
+RecvWrite	26
+Detail:	receive	2	create	3	process	58	cleanup	15
+WorkTotal	85
+FSyncLocalFile
+FsyncLocal	448
+Detail:	receive	3	create	2	process	491	cleanup	19
+WorkTotal	522
+WriteLocalFile
+RecvWrite	26
+Detail:	receive	2	create	3	process	58	cleanup	15
+WorkTotal	85
+FSyncLocalFile
+FsyncLocal	395
+Detail:	receive	2	create	2	process	438	cleanup	18
+WorkTotal	467
+Detail:	receive	2	create	3	process	49	cleanup	18
+WorkTotal	89

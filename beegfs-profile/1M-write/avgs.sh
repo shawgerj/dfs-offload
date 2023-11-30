@@ -1,6 +1,7 @@
 #!/bin/bash
 
-filename="bgfs-storage-1Mwrite-fsync.txt"
+filename=$1
+#"bgfs-storage-1Mwrite-fsync.txt"
 
 echo -e "WORKTH\tRECV\tCREAT\tPROCESS\tOP\tCLEANUP"
 
