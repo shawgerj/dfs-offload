@@ -363,7 +363,7 @@ int setup_ib ()
     }
     check (ret == 0, "Failed to connect qp");
 
-    ibv_free_device_list (dev_list);
+    //    ibv_free_device_list (dev_list);
     return 0;
 
  error:
