@@ -1,0 +1,141 @@
+#include <infiniband/verbs.h>
+#include <stdlib.h>
+// Generally, these are the steps we want to follow
+// https://insujang.github.io/2020-02-09/introduction-to-programming-infiniband/
+/* Create an Infiniband context (struct ibv_context* ibv_open_device()) */
+/* Create a protection domain (struct ibv_pd* ibv_alloc_pd()) */
+/* Create a completion queue (struct ibv_cq* ibv_create_cq()) */
+/* Create a queue pair (struct ibv_qp* ibv_create_qp()) */
+/* Exchange identifier information to establish connection */
+/* Change the queue pair state (ibv_modify_qp()): change the state of the queue pair from RESET to INIT, RTR (Ready to Receive), and finally RTS (Ready to Send) 5 */
+/* Register a memory region (ibv_reg_mr()) */
+/* Exchange memory region information to handle operations */
+/* Perform data communication */
+
+
+struct ibv_context* create_context(const char* device_name) {
+    struct ibv_context* context = NULL;
+    int num_devices;
+    struct ibv_device** device_list = ibv_get_device_list(&num_devices);
+
+    // find the ibv device matching name
+    for (int i = 0; i < num_devices; i++) {
+        if (!strcmp(device_name, ibv_get_device_name(device_list[i]))) {
+            context = ibv_open_device(device_list[i]);
+
+            ibv_free_device_list(device_list);
+            return context;
+        }
+    }
+
+    printf("Unable to find the device %s\n", device_name);
+    return NULL;
+}
+
+struct ibv_qp* create_qp(struct ibv_pd* pd, struct ibv_cq* cq) {
+    struct ibv_qp_init_attr queue_pair_init_attr;
+    memset(&queue_pair_init_attr, 0, sizeof(queue_pair_init_attr));
+    // RC: reliable connection. Unreliable connection and datagram available
+    queue_pair_init_attr.qp_type = IBV_QPT_RC;
+    queue_pair_init_attr.sq_sig_all = 1;
+    queue_pair_init_attr.send_cq = cq;
+    queue_pair_init_attr.recv_cq = cq;
+
+    // why are we only allowing one outstanding send/recv in the queue?
+    queue_pair_init_attr.cap.max_send_wr = 1;
+    queue_pair_init_attr.cap.max_recv_wr = 1;
+    queue_pair_init_attr.cap.max_send_sge = 1;
+    queue_pair_init_attr.cap.max_recv_sge = 1;
+
+    return ibv_create_qp(pd, &queue_pair_init_attr);
+}
+
+int modify_qp_state_init(struct ibv_qp* qp) {
+    struct ibv_qp_attr attr;
+    int flags;
+
+    memset(&attr, 0, sizeof(attr));
+    attr.qp_state = IBV_QPS_INIT;
+    attr.port_num = 1;
+    attr.pkey_index = 0;
+    attr.qp_access_flags = IBV_ACCESS_LOCAL_WRITE | IBV_ACCESS_REMOTE_READ | IBV_ACCESS_REMOTE_WRITE;
+
+    flags = IBV_QP_STATE | IBV_QP_PKEY_INDEX | IBV_QP_PORT | IBV_QP_ACCESS_FLAGS;
+
+    return ibv_modify_qp(qp, &attr, flags);
+}
+
+// Some terminology
+// AH: address handle
+// qp: queue pair to modify
+// remote_qpn: destination QP
+// dlid: destination LID (Local ID)
+// Ready To Receive
+int modify_qp_to_rtr(struct ibv_qp* qp, int remote_qpn, int dlid, int* dgid) {
+    struct ibv_qp_attr rtr_attr;
+    memset(&rtr_attr, 0, sizeof(rtr_attr));
+    rtr_attr.qp_state = IBV_QPS_RTR;
+    rtr_attr.path_mtu = IBV_MTU_1024;
+    rtr_attr.rq_psn = 0;
+    rtr_attr.max_dest_rd_atomic = 1;
+    rtr_attr.min_rnr_timer = 0x12;
+    rtr_attr.ah_attr.is_global = 0;
+    rtr_attr.ah_attr.sl = 0;
+    rtr_attr.ah_attr.src_path_bits = 0;
+    rtr_attr.ah_attr.port_num = 1;
+
+    rtr_attr.dest_qp_num = remote_qpn;
+    rtr_attr.ah_attr.dlid = dlid;
+
+    return ibv_modify_qp(qp, &rtr_attr, IBV_QP_STATE | IBV_QP_AV | IBV_QP_PATH_MTU | IBV_QP_DEST_QPN | IBV_QP_RQ_PSN | IBV_QP_MAX_DEST_RD_ATOMIC | IBV_QP MIN_RNR_TIMER);
+}
+
+// Ready To Send
+int modify_qp_to_rts(struct ibv_qp* qp) {
+    struct ibv_qp_attr rts_attr;
+    memset(&rts_attr, 0, sizeof(rts_attr));
+    rts_attr.qp_state = IBV_QPS_RTS;
+    rts_attr.timeout = 0x12;
+    rts_attr.retry_cnt = 7;
+    rts_attr.rnr_retry = 7;
+    rts_attr.sq_psn = 0;
+    rts_attr.max_rd_atomic = 1;
+
+    return ibv_modify_qp(qp, &rts_attr, IBV_QP_STATE | IBV_QP_TIMEOUT | IBV_QP_RETRY_CNT | IBV_QP_RNR_RETRY | IBV_QP_SQ_PSN | IBV_QP_MAX_QP_RD_ATOMIC);
+}
+
+uint16_t get_local_id(struct ibv_context* ctx, int ib_port) {
+    ibv_port_attr port_attr;
+    ibv_query_port(ctx, ib_port, &port_attr);
+    return port_attr.lid;
+}
+
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        printf("usage: ./server <mlx_device>\n");
+    }
+
+    // create context
+    struct ibv_context* ctx = create_context(argv[1]);
+    // create protection domain
+    struct ibv_pd* pd = ibv_alloc_pd(ctx);
+
+    // create completion queue
+    int cq_size = 0x10; // does this number matter?
+    struct ibv_cq* cq = ibv_create_cq(context, cq_size, NULL, NULL, 0);
+
+    // create queue pair
+    // qp is initially in RESET state
+    // we must modify to INIT then RTR (ready-to-receive)
+    struct ibv_qp* qp = create_qp(pd, cq);
+
+
+    // register memory region
+    // does buf need to be page-aligned and contiguous?
+    struct ibv_mr* mr = ibv_reg_mr(pd, buf, sz, IBV_ACCESS_LOCAL_WRITE | IBV_ACCESS_REMOTE_READ | IBV_ACCESS_REMOTE_WRITE);
+    
+    
+    
+    return 0;
+}
+    
