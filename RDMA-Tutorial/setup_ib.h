@@ -21,7 +21,7 @@ struct IBRes {
 
 extern struct IBRes ib_res;
 
-int  setup_ib (const char* device_name);
+int  setup_ib ();
 void close_ib_connection ();
 
 int  connect_qp_server ();

@@ -24,11 +24,12 @@ int main (int argc, char *argv[])
     ret = parse_config_file (argv[1]);
     check (ret == 0, "Failed to parse config file");
     config_info.sock_port = argv[2];
+    config_info.device_name = argv[3];
 
     ret = init_env ();
     check (ret == 0, "Failed to init env");
 
-    ret = setup_ib (argv[3]);
+    ret = setup_ib ();
     check (ret == 0, "Failed to setup IB");
 
     if (config_info.is_server) {

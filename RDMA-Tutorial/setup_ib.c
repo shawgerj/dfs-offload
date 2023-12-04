@@ -249,7 +249,7 @@ int connect_qp_client ()
     return -1;
 }
 
-int setup_ib (const char* device_name)
+int setup_ib ()
 {
     int	ret		         = 0;
     int i                        = 0;
@@ -268,7 +268,7 @@ int setup_ib (const char* device_name)
     check(dev_list != NULL, "Failed to get ib device list.");
 
     for (int j = 0; j < numdevs; j++) {
-      if (!strcmp(device_name, ibv_get_device_name(dev_list[j]))) {
+      if (!strcmp(config_info.device_name, ibv_get_device_name(dev_list[j]))) {
 	/* create IB context */
 	ib_res.ctx = ibv_open_device(dev_list[j]);
 	ibv_free_device_list(dev_list);
