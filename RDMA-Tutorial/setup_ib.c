@@ -43,8 +43,18 @@ int connect_qp_server ()
     for (i = 0; i < num_peers; i++) {
 	local_qp_info[i].lid	= ib_res.port_attr.lid; 
 	local_qp_info[i].qp_num = ib_res.qp[i]->qp_num;
+	local_qp_info[i].gid_index = ib_res.gid_index;
 	local_qp_info[i].rank   = config_info.rank;
+
+	if (local_qp_info[i].lid == 0 &&
+	    ib_res.port_attr.link_layer == IBV_LINK_LAYER_ETHERNET) {
+	  ret = ibv_query_gid(ib_res.ctx, IB_PORT,
+			      local_qp_info[i].gid_index, &(local_qp_info[i].gid));
+	  check(ret == 0, "failed to get gid");
+	}
+
     }
+
 
     /* get qp_info from client */
     remote_qp_info = (struct QPInfo *) calloc (num_peers, 
@@ -81,9 +91,7 @@ int connect_qp_server ()
 		break;
 	    }
 	}
-	ret = modify_qp_to_rts (ib_res.qp[peer_ind], 
-				remote_qp_info[i].qp_num, 
-				remote_qp_info[i].lid);
+	ret = modify_qp_to_rts (ib_res.qp[peer_ind], &local_qp_info[i], &remote_qp_info[i]); 
 	check (ret == 0, "Failed to modify qp[%d] to rts", peer_ind);
 
 	log ("\tqp[%"PRIu32"] <-> qp[%"PRIu32"]", 
@@ -152,8 +160,15 @@ int connect_qp_client ()
 
     for (i = 0; i < num_peers; i++) {
 	local_qp_info[i].lid     = ib_res.port_attr.lid; 
-	local_qp_info[i].qp_num  = ib_res.qp[i]->qp_num; 
+	local_qp_info[i].qp_num  = ib_res.qp[i]->qp_num;
+	local_qp_info[i].gid_index = ib_res.gid_index;
 	local_qp_info[i].rank    = config_info.rank;
+	
+	if (local_qp_info[i].lid == 0 &&
+	    ib_res.port_attr.link_layer == IBV_LINK_LAYER_ETHERNET) {
+	  ret = ibv_query_gid(ib_res.ctx, IB_PORT, local_qp_info[i].gid_index, &(local_qp_info[i].gid));
+	  check(ret == 0, "failed to get gid");
+	}
     }
 
     /* send qp_info to server */
@@ -185,9 +200,7 @@ int connect_qp_client ()
 		break;
 	    }
 	}
-	ret = modify_qp_to_rts (ib_res.qp[peer_ind], 
-				remote_qp_info[i].qp_num, 
-				remote_qp_info[i].lid);
+	ret = modify_qp_to_rts (ib_res.qp[peer_ind], &local_qp_info[i], &remote_qp_info[i]);
 	check (ret == 0, "Failed to modify qp[%d] to rts", peer_ind);
     
 	log ("\tqp[%"PRIu32"] <-> qp[%"PRIu32"]", 
@@ -270,6 +283,8 @@ int setup_ib (const char* device_name)
     /* query IB port attribute */
     ret = ibv_query_port(ib_res.ctx, IB_PORT, &ib_res.port_attr);
     check(ret == 0, "Failed to query IB port information.");
+
+    ib_res.gid_index = config_info.gid_index;
     
     /* register mr */
     /* set the buf_size twice as large as msg_size * num_concurr_msgs */

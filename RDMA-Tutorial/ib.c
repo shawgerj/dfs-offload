@@ -4,7 +4,8 @@
 #include "ib.h"
 #include "debug.h"
 
-int modify_qp_to_rts (struct ibv_qp *qp, uint32_t target_qp_num, uint16_t target_lid)
+//int modify_qp_to_rts (struct ibv_qp *qp, uint32_t target_qp_num, uint16_t target_lid)
+int modify_qp_to_rts(struct ibv_qp *qp, struct QPInfo *local, struct QPInfo *remote)
 {
     int ret = 0;
 
@@ -31,17 +32,27 @@ int modify_qp_to_rts (struct ibv_qp *qp, uint32_t target_qp_num, uint16_t target
 	struct ibv_qp_attr  qp_attr = {
 	    .qp_state           = IBV_QPS_RTR,
 	    .path_mtu           = IB_MTU,
-	    .dest_qp_num        = target_qp_num,
+	    //	    .dest_qp_num        = target_qp_num,
+	    .dest_qp_num        = remote->qp_num,
 	    .rq_psn             = 0,
 	    .max_dest_rd_atomic = 1,
 	    .min_rnr_timer      = 12,
 	    .ah_attr.is_global  = 0,
-	    .ah_attr.dlid       = target_lid,
+	    //	    .ah_attr.dlid       = target_lid,
+	    .ah_attr.dlid       = remote->lid, 
 	    .ah_attr.sl         = IB_SL,
 	    .ah_attr.src_path_bits = 0,
 	    .ah_attr.port_num      = IB_PORT,
 	};
 
+	if (remote->lid == 0) {
+	  qp_attr.ah_attr.is_global = 1;
+	  qp_attr.ah_attr.grh.sgid_index = local->gid_index;
+	  qp_attr.ah_attr.grh.dgid = remote->gid;
+	  qp_attr.ah_attr.grh.hop_limit = 0xFF;
+	  qp_attr.ah_attr.grh.traffic_class = 0;
+	}
+	
 	ret = ibv_modify_qp(qp, &qp_attr,
 			    IBV_QP_STATE | IBV_QP_AV |
 			    IBV_QP_PATH_MTU | IBV_QP_DEST_QPN |

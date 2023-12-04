@@ -173,6 +173,7 @@ int parse_config_file (char *fname)
                    config_info.num_concurr_msgs);
         }
 
+	config_info.gid_index = 1; // terrible place to put this... shawgerj
         attr = 0;
     }
 

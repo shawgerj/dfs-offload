@@ -22,6 +22,7 @@ struct ConfigInfo {
 
     int  msg_size;           /* the size of each echo message */
     int  num_concurr_msgs;   /* the number of messages can be sent concurrently */
+    int  gid_index;
 
     char *sock_port;         /* socket port number */
 }__attribute__((aligned(64)));
