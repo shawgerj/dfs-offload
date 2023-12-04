@@ -1,4 +1,4 @@
-# RDMA-Tutorial
+# Rdma-Tutorial
 This project presents an example based tutorial on RDMA based programming. A more detailed 
 discussion can be found on the [Wiki](https://github.com/jcxue/RDMA-Tutorial/wiki) page.
 

@@ -13,7 +13,7 @@
 #define IB_SL			0
 #define IB_WR_ID_STOP		0xE000000000000000
 #define NUM_WARMING_UP_OPS      500000
-#define TOT_NUM_OPS             10000000
+#define TOT_NUM_OPS             2000000
 #define SIG_INTERVAL            1000
 
 #if __BYTE_ORDER == __LITTLE_ENDIAN
