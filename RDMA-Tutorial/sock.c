@@ -15,6 +15,7 @@ ssize_t sock_read (int sock_fd, void *buffer, size_t len)
     tot_read = 0;
 
     while (len !=0 && (nr = read(sock_fd, buf, len)) != 0) {
+      //      printf("nr is : %ld\n", nr);
         if (nr < 0) {
             if (errno == EINTR) {
                 continue;

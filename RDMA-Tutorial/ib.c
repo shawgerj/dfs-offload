@@ -46,6 +46,7 @@ int modify_qp_to_rts(struct ibv_qp *qp, struct QPInfo *local, struct QPInfo *rem
 	};
 
 	if (remote->lid == 0) {
+	  //	  printf("remote lid is 0, setting gid\n");
 	  qp_attr.ah_attr.is_global = 1;
 	  qp_attr.ah_attr.grh.sgid_index = local->gid_index;
 	  qp_attr.ah_attr.grh.dgid = remote->gid;
