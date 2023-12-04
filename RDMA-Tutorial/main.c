@@ -16,8 +16,8 @@ int main (int argc, char *argv[])
 {
     int	ret = 0;
 
-    if (argc != 3) {
-	printf ("Usage: %s config_file sock_port\n", argv[0]);
+    if (argc != 4) {
+	printf ("Usage: %s config_file sock_port rdma_device\n", argv[0]);
 	return 0;
     }    
 
@@ -28,7 +28,7 @@ int main (int argc, char *argv[])
     ret = init_env ();
     check (ret == 0, "Failed to init env");
 
-    ret = setup_ib ();
+    ret = setup_ib (argv[3]);
     check (ret == 0, "Failed to setup IB");
 
     if (config_info.is_server) {

@@ -236,10 +236,11 @@ int connect_qp_client ()
     return -1;
 }
 
-int setup_ib ()
+int setup_ib (const char* device_name)
 {
     int	ret		         = 0;
     int i                        = 0;
+    int numdevs                  = 0;
     struct ibv_device **dev_list = NULL;    
     memset (&ib_res, 0, sizeof(struct IBRes));
 
@@ -250,11 +251,16 @@ int setup_ib ()
     }
 
     /* get IB device list */
-    dev_list = ibv_get_device_list(NULL);
+    dev_list = ibv_get_device_list(&numdevs);
     check(dev_list != NULL, "Failed to get ib device list.");
 
-    /* create IB context */
-    ib_res.ctx = ibv_open_device(*dev_list);
+    for (int j = 0; j < numdevs; j++) {
+      if (!strcmp(device_name, ibv_get_device_name(dev_list[j]))) {
+	/* create IB context */
+	ib_res.ctx = ibv_open_device(dev_list[j]);
+	ibv_free_device_list(dev_list);
+      }
+    }
     check(ib_res.ctx != NULL, "Failed to open ib device.");
 
     /* allocate protection domain */
