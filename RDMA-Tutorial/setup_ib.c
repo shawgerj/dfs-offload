@@ -48,9 +48,12 @@ int connect_qp_server ()
 
 	if (local_qp_info[i].lid == 0 &&
 	    ib_res.port_attr.link_layer == IBV_LINK_LAYER_ETHERNET) {
+	  union ibv_gid gid;
 	  ret = ibv_query_gid(ib_res.ctx, IB_PORT,
-			      local_qp_info[i].gid_index, &(local_qp_info[i].gid));
+			      local_qp_info[i].gid_index, &gid);
+
 	  check(ret == 0, "failed to get gid");
+	  local_qp_info[i].gid = gid;
 	}
 
     }
@@ -166,8 +169,10 @@ int connect_qp_client ()
 	
 	if (local_qp_info[i].lid == 0 &&
 	    ib_res.port_attr.link_layer == IBV_LINK_LAYER_ETHERNET) {
-	  ret = ibv_query_gid(ib_res.ctx, IB_PORT, local_qp_info[i].gid_index, &(local_qp_info[i].gid));
+	  union ibv_gid gid;
+	  ret = ibv_query_gid(ib_res.ctx, IB_PORT, local_qp_info[i].gid_index, &gid);
 	  check(ret == 0, "failed to get gid");
+	  local_qp_info[i].gid = gid;
 	}
     }
 

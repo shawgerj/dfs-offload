@@ -32,7 +32,7 @@ struct QPInfo {
     uint32_t rank;
     union ibv_gid gid;
     uint8_t gid_index;
-}; //__attribute__ ((packed));
+}__attribute__ ((packed));
 
 enum MsgType {
     MSG_CTL_START = 100,

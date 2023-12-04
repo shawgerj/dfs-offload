@@ -1,8 +1,0 @@
-servers:
-	node1
-clients:
-	node0
-num_concurr_msgs:
-	64
-msg_size:
-	8
