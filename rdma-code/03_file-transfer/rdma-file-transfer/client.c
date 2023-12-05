@@ -135,7 +135,7 @@ static void send_file_name(struct rdma_cm_id *id, size_t size)
   struct client_context *ctx = (struct client_context *)id->context;
   uint32_t namelen = strlen(ctx->file_name) + 1;
 
-  memcpy(ctx->buffer, namelen, sizeof(uint32_t));
+  memcpy(ctx->buffer, &namelen, sizeof(uint32_t));
   strcpy(ctx->buffer + sizeof(uint32_t), ctx->file_name);
 
   write_remote(id, strlen(ctx->file_name) + 1 + sizeof(uint32_t), size);
