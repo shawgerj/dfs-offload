@@ -80,6 +80,7 @@ int connect_qp_server ()
 		break;
 	    }
 	}
+
 	ret = sock_set_qp_info (peer_sockfd[i], &local_qp_info[peer_ind]);
 	check (ret == 0, "Failed to send qp_info to client[%d]", peer_ind);
     }

@@ -20,6 +20,14 @@ The project contains 4 examples. Details of the examples can be found on the
 are organized as git commits. Simply do ```git log --oneline``` to find the commit version number 
 corresponding to the examples you are looking for.
 
+## IBV Pingpong
+### Server
+ibv_rc_pingpong -g 1 -d mlx5_2 -i 1
+
+### Client
+ibv_rc_pingpong -g 1 -d mlx5_2 -i 1 node1
+
 ## Contact
 
 Jiachen Xue (jcxue.work@gmail.com)
+John Shawger (shawgerj@cs.wisc.edu)
