@@ -111,11 +111,11 @@ static void on_completion(struct ibv_wc *wc)
       send_message(id);
 
     } else {
-      struct name_header nh;
-      memcpy(&nh, ctx->buffer, sizeof(struct name_header));
-      nh.namelen = (nh.namelen > MAX_FILE_NAME) ? MAX_FILE_NAME : nh.namelen;
-      memcpy(ctx->file_name, ctx->buffer+nh.offset, nh.namelen);
-      ctx->file_name[size - 1] = '\0';
+      uint32_t namelen;
+      memcpy(&namelen, ctx->buffer + size, sizeof(uint32_t));
+      namelen = (namelen > MAX_FILE_NAME) ? MAX_FILE_NAME : namelen;
+      memcpy(ctx->file_name, ctx->buffer+size+sizeof(uint32_t), namelen);
+      ctx->file_name[namelen - 1] = '\0';
 
       printf("opening file %s\n", ctx->file_name);
 
@@ -123,6 +123,15 @@ static void on_completion(struct ibv_wc *wc)
 
       if (ctx->fd == -1)
         rc_die("open() failed");
+
+      ssize_t ret;
+
+      printf("trying to write %i bytes.\n", size);
+
+      ret = write(ctx->fd, ctx->buffer, size);
+
+      if (ret != size)
+        rc_die("write() failed");
 
       post_receive(id);
 
