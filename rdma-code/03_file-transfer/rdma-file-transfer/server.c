@@ -111,8 +111,8 @@ static void on_completion(struct ibv_wc *wc)
       send_message(id);
 
     } else {
-      struct name_header nh;
-      memcpy(&nh, ctx->buffer, sizeof(struct name_header));
+      uint32_t namelen;
+      memcpy(&namelen, ctx->buffer + size, sizeof(uint32_t));
       nh.namelen = (nh.namelen > MAX_FILE_NAME) ? MAX_FILE_NAME : nh.namelen;
       memcpy(ctx->file_name, ctx->buffer+nh.offset, nh.namelen);
       ctx->file_name[size - 1] = '\0';

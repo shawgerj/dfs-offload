@@ -31,7 +31,11 @@ static void write_remote(struct rdma_cm_id *id, uint32_t len, uint32_t offset)
   wr.wr_id = (uintptr_t)id;
   wr.opcode = IBV_WR_RDMA_WRITE_WITH_IMM;
   wr.send_flags = IBV_SEND_SIGNALED;
-  wr.imm_data = htonl(len);
+  if (offset) {
+    wr.imm_data = htonl(offset);
+  } else {
+    wr.imm_data = htonl(len);
+  }
   wr.wr.rdma.remote_addr = ctx->peer_addr + offset;
   wr.wr.rdma.rkey = ctx->peer_rkey;
 
@@ -129,16 +133,12 @@ static size_t send_one_sided(struct rdma_cm_id *id)
 static void send_file_name(struct rdma_cm_id *id, size_t size)
 {
   struct client_context *ctx = (struct client_context *)id->context;
-  uint32_t name_length = strlen(ctx->file_name) + 1;
-  struct name_header nh = {
-    .namelen = name_length,
-    .offset = size,
-  };
+  uint32_t namelen = strlen(ctx->file_name) + 1;
 
-  strcpy(ctx->buffer, ctx->file_name);
-  memcpy(ctx->buffer + name_length, &nh, sizeof(struct name_header));
+  memcpy(ctx->buffer, namelen, sizeof(uint32_t));
+  strcpy(ctx->buffer + sizeof(uint32_t), ctx->file_name);
 
-  write_remote(id, strlen(ctx->file_name) + 1, size);
+  write_remote(id, strlen(ctx->file_name) + 1 + sizeof(uint32_t), size);
 }
 
 static void on_pre_conn(struct rdma_cm_id *id)
