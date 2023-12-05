@@ -89,6 +89,7 @@ void event_loop(struct rdma_event_channel *ec, int exit_on_disconnect)
     rdma_ack_cm_event(event);
 
     if (event_copy.event == RDMA_CM_EVENT_ADDR_RESOLVED) {
+      printf("client: event addr resolved\n");
       build_connection(event_copy.id);
 
       if (s_on_pre_conn_cb)
@@ -97,9 +98,11 @@ void event_loop(struct rdma_event_channel *ec, int exit_on_disconnect)
       TEST_NZ(rdma_resolve_route(event_copy.id, TIMEOUT_IN_MS));
 
     } else if (event_copy.event == RDMA_CM_EVENT_ROUTE_RESOLVED) {
+      printf("client: event route resolved\n");
       TEST_NZ(rdma_connect(event_copy.id, &cm_params));
 
     } else if (event_copy.event == RDMA_CM_EVENT_CONNECT_REQUEST) {
+      printf("client: event connect request\n");
       build_connection(event_copy.id);
 
       if (s_on_pre_conn_cb)
@@ -108,10 +111,12 @@ void event_loop(struct rdma_event_channel *ec, int exit_on_disconnect)
       TEST_NZ(rdma_accept(event_copy.id, &cm_params));
 
     } else if (event_copy.event == RDMA_CM_EVENT_ESTABLISHED) {
+      printf("client: event established\n");
       if (s_on_connect_cb)
         s_on_connect_cb(event_copy.id);
 
     } else if (event_copy.event == RDMA_CM_EVENT_DISCONNECTED) {
+      printf("client: event disconnected\n");
       rdma_destroy_qp(event_copy.id);
 
       if (s_on_disconnect_cb)
@@ -134,6 +139,7 @@ void * poll_cq(void *ctx)
   struct ibv_wc wc;
 
   while (1) {
+    // n.b. the man page for ibv_get_c_event() has a detailed example
     TEST_NZ(ibv_get_cq_event(s_ctx->comp_channel, &cq, &ctx));
     ibv_ack_cq_events(cq, 1);
     TEST_NZ(ibv_req_notify_cq(cq, 0));

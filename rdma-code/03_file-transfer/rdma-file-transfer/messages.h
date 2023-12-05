@@ -9,7 +9,8 @@ enum message_id
   MSG_INVALID = 0,
   MSG_MR,
   MSG_READY,
-  MSG_DONE
+  MSG_DONE,
+  MSG_ACK
 };
 
 struct message
@@ -24,6 +25,12 @@ struct message
       uint32_t rkey;
     } mr;
   } data;
+};
+
+struct name_header
+{
+  uint32_t namelen;
+  uint32_t offset;
 };
 
 #endif
